@@ -19,7 +19,7 @@ Um sistema para gerenciar um evento de treinamento, que será realizado em 2 eta
 
 ### Obrigatórios
 
-- [JDK](https://www.oracle.com/br/java/technologies/javase-downloads.html)
+- :warning: [JDK](https://www.oracle.com/br/java/technologies/javase-downloads.html)
 
 ### Opcionais
 
@@ -41,10 +41,20 @@ descompacte o arquivo ZIP
 
 Utilize alguma IDE compativel com Java como por exemplo o Eclipse for Java Developers
 
-## Como rodar a aplicação
+## Como rodar a aplicação :arrow_forward:
 
 Construa/Compile todas as classes .java de forma a evitar erros
 
 Execute através da classe Menu.java
 
 Através do console da IDE será aberto o Menu Principal e feita a comunicação entre o sistema e o usuario
+
+## Contribuintes
+
+- [William Chapuis](https://github.com/willchapuis/)
+
+## Tarefas Pendentes
+
+- Junção com o projeto [desafioGestaoInacabado](https://github.com/willchapuis/desafioGestaoInacabado) ou desenvolver uma interface grafica e implementar uma conexão com banco
+- Melhorar a organização dos arquivos do sistema
+- Melhorar a documentação
