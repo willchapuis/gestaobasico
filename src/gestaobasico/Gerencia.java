@@ -242,6 +242,7 @@ public class Gerencia {
 	public void relaciona() {
 		Pessoa p;
 		Integer v1, v2, v3, aux;
+		boolean trocar = true;
 		
 		for(int i=0; i<getSizePessoa(); i++) {
 			
@@ -250,6 +251,22 @@ public class Gerencia {
 			v2 = p.getIdPessoa() % getSizeSala();
 			v3 = (p.getIdPessoa() + 1) % getSizeSala();
 			
+			if(i % getSizeSala() == 0) {
+				if (trocar) {
+					trocar = false;
+				} else {
+					trocar = true;
+				}
+			}
+			
+			// relacionando dos espacos de cafe
+			if(v1 == 0) {
+				aux = (lstEspaco.get(getSizeEspaco() - 1)).getIdEspacoCafe();
+				p.setIdEspaco(aux);
+			} else {
+				aux = (lstEspaco.get(v1 - 1)).getIdEspacoCafe();
+				p.setIdEspaco(aux);
+			}
 			
 			// relacionando das salas do evento
 			
@@ -263,22 +280,20 @@ public class Gerencia {
 			}
 			
 			// etapa 2
-			if (v3 == 0) {
-				aux = (lstSala.get(getSizeSala() - 1)).getIdSalaEvento();
-				p.setIdSalaEtapa2(aux);
+			if (trocar) {
+				if (v3 == 0) {
+					aux = (lstSala.get(getSizeSala() - 1)).getIdSalaEvento();
+					p.setIdSalaEtapa2(aux);
+				} else {
+					aux = (lstSala.get(v3 - 1)).getIdSalaEvento();
+					p.setIdSalaEtapa2(aux);
+				}
 			} else {
-				aux = (lstSala.get(v3 - 1)).getIdSalaEvento();
-				p.setIdSalaEtapa2(aux);
+				p.setIdSalaEtapa2(p.getIdSalaEtapa1());
 			}
 			
-			// relacionando dos espacos de cafe
-			if(v1 == 0) {
-				aux = (lstEspaco.get(getSizeEspaco() - 1)).getIdEspacoCafe();
-				p.setIdEspaco(aux);
-			} else {
-				aux = (lstEspaco.get(v1 - 1)).getIdEspacoCafe();
-				p.setIdEspaco(aux);
-			}
+			
+			
 		}
 	}
 	
